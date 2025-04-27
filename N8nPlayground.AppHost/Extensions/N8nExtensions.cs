@@ -5,11 +5,11 @@ namespace N8nPlayground.AppHost.Extensions;
 public static class N8nExtensions
 {
     /// <summary>
-    /// Adds an N8n container to the distributed application.
+    /// Adds an N8N container to the distributed application.
     /// </summary>
     /// <param name="builder">The <see cref="IDistributedApplicationBuilder"/>.</param>
     /// <param name="name">The name of the resource.</param>
-    /// <param name="port">An optional fixed port to bind to the Ollama container. This will be provided randomly by Aspire if not set.</param>
+    /// <param name="port">An optional fixed port to bind to the N8N container. This will be provided randomly by Aspire if not set.</param>
     /// <param name="timeZone">An optional timezone in IANA format, like 'Australia/Sydney'. If not set, we try to detect the timezone of the OS.</param>
     /// <returns></returns>
     public static IResourceBuilder<ContainerResource> AddN8n(
