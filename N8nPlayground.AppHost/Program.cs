@@ -4,6 +4,8 @@ var builder = DistributedApplication.CreateBuilder(args);
 
 var cache = builder.AddRedis("cache");
 
+// To safely store your Postgres password, use the following command inside  the N8nPlayground.AppHost folder:
+// dotnet user-secrets set "Parameters:postgres-password" "YOUR_SECRET_PASSWORD"
 var postgresPassword = builder.AddParameter("postgres-password", secret: true);
 var postgres = builder.AddPostgres("postgres", password: postgresPassword)
     .WithDataVolume("n8n-playground")
