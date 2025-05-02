@@ -2,7 +2,7 @@ using N8nPlayground.AppHost.Extensions;
 
 var builder = DistributedApplication.CreateBuilder(args);
 
-var cache = builder.AddRedis("cache");
+//var cache = builder.AddRedis("cache");
 
 // To safely store your Postgres password, use the following command inside  the N8nPlayground.AppHost folder:
 // dotnet user-secrets set "Parameters:postgres-password" "YOUR_SECRET_PASSWORD"
@@ -12,7 +12,7 @@ var postgres = builder.AddPostgres("postgres", password: postgresPassword)
     .WithPgAdmin(resource =>
     {
         resource.WithUrlForEndpoint("http", u => u.DisplayText = "PG Admin");
-    }); ;
+    });
 
 var ollama = builder.AddOllama("ollama", 11434)
     .WithDataVolume("ollama")
